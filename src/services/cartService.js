@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const CART_API_URL = "http://localhost:9090/api/cart";
+const CART_API_URL = "http://localhost:9090/back1/api/cart";
 
 export const addToCart = async (userId, productId) => {
   return await axios.post(`${CART_API_URL}/add`, {
@@ -22,7 +22,7 @@ export const clearCart = async (userId) => {
 // Remove Cart Item
 export const removeCartItem = async (cartItemId) => {
     try {
-        await axios.delete(`${API_URL}/remove/${cartItemId}`);
+        await axios.delete(`${CART_API_URL}/remove/${cartItemId}`);
     } catch (error) {
         console.error("Error removing item from cart", error);
     }
